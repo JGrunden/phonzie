@@ -15,5 +15,8 @@
     <string name="hint_last_name">Last name</string>
     <string name="hint_p_number">Person number</string>
     <string name="button_back">Back</string>
+    <string name="person_added_message">ERMAGEEEEEEEEEEEEEEEEEEEEEEEEERD</string>
+    <string name="success_title">Success!</string>
+    <string name="ok">Ok</string>
 
 </resources>

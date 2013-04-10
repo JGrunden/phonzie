@@ -2,6 +2,8 @@ package com.jagk.phonzie;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -69,7 +71,27 @@ public class AddPersonActivity extends Activity {
     	EditText pn = (EditText) findViewById(R.id.add_p_number);
     	int pnumber = Integer.getInteger(pn.getText().toString());
     	Person p = new Person(firstName, lastName, pnumber);
-    	helper.addPerson(p);    	
+    	helper.addPerson(p);
+    	
+    	// 1. Instantiate an AlertDialog.Builder with its constructor
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+    	// 2. Chain together various setter methods to set the dialog characteristics
+    	builder.setMessage(R.string.person_added_message)
+    	       .setTitle(R.string.success_title);
+    	
+    	builder.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+            }
+        });
+
+    	// 3. Get the AlertDialog from create()
+    	AlertDialog dialog = builder.create();
+    	
+    	first.setText("");
+    	last.setText("");
+    	pn.setText("");
     }
     
     /** Called when the user clicks the Back button */
