@@ -50,6 +50,15 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper implements Parcelable {
 		db.insert(PersonTable, null, cv);
 		db.close();
 	}
+	
+	 // Deleting single contact
+    public void deletePerson(Person p) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(PersonTable, colID + " = ?",
+                new String[] { String.valueOf(p.getPnumber())});
+        db.close();
+    }
+	
 	/* TBD
 	public int updatePerson(String fname, String lname, Integer pnumber)
 	  {
