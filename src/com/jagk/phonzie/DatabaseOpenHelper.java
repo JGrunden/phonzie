@@ -40,13 +40,13 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper implements Parcelable {
 		onCreate(db);
 	}
 
-	public void addPerson(String fname, String lname, Integer pnumber){
+	public void addPerson(Person p){
 		SQLiteDatabase db=this.getWritableDatabase();
 		ContentValues cv=new ContentValues();
 		cv.put(colID, 1); //kanske ska vara id istället för 1
-		cv.put(colFname, fname);
-		cv.put(colLname, lname);
-		cv.put(colPnumber, pnumber);
+		cv.put(colFname, p.getFname());
+		cv.put(colLname, p.getLname());
+		cv.put(colPnumber, p.getPnumber());
 		db.insert(PersonTable, null, cv);
 		db.close();
 	}
