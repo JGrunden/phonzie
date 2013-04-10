@@ -4,5 +4,7 @@
     <string name="app_name">Phonzie</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="button_add_person">Add person</string>
+    <string name="button_search_person">Search person</string>
 
 </resources>
