@@ -24,8 +24,7 @@ public class AddPersonActivity extends Activity {
 		setupActionBar();
 		
 		Bundle b = this.getIntent().getExtras();
-		if(b!=null)
-		    helper = b.getParcelable(MainActivity.DATABASE);
+		helper = b.getParcelable(MainActivity.DATABASE);
 	}
 
 	/**
@@ -88,14 +87,13 @@ public class AddPersonActivity extends Activity {
 
     	// 3. Get the AlertDialog from create()
     	AlertDialog dialog = builder.create();
-    	
     	first.setText("");
     	last.setText("");
     	pn.setText("");
     }
     
     /** Called when the user clicks the Back button */
-    public void searchPerson(View view) {
+    public void back(View view) {
     	
     }
 
