@@ -87,6 +87,7 @@ public class AddPersonActivity extends Activity {
 
     	// 3. Get the AlertDialog from create()
     	AlertDialog dialog = builder.create();
+    	
     	first.setText("");
     	last.setText("");
     	pn.setText("");
