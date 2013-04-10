@@ -1,22 +1,29 @@
 package com.jagk.phonzie;
 
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.os.Build;
+import android.widget.EditText;
 
 public class AddPersonActivity extends Activity {
+	
+	DatabaseOpenHelper helper;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_person);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		Bundle b = this.getIntent().getExtras();
+		if(b!=null)
+		    helper = b.getParcelable(MainActivity.DATABASE);
 	}
 
 	/**
@@ -55,7 +62,14 @@ public class AddPersonActivity extends Activity {
 	
     /** Called when the user clicks the Add Person button */
     public void addPerson(View view) {
-    	
+    	EditText first = (EditText) findViewById(R.id.add_first_name);
+    	String firstName = first.getText().toString();
+    	EditText last = (EditText) findViewById(R.id.add_last_name);
+    	String lastName = last.getText().toString();
+    	EditText pn = (EditText) findViewById(R.id.add_p_number);
+    	int pnumber = Integer.getInteger(pn.getText().toString());
+    	Person p = new Person(firstName, lastName, pnumber);
+    	helper.addPerson(p);    	
     }
     
     /** Called when the user clicks the Back button */
