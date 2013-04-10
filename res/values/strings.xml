@@ -6,5 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="button_add_person">Add person</string>
     <string name="button_search_person">Search person</string>
+    <string name="title_activity_search_person">Search Person</string>
+    <string name="title_activity_add_person">Add Person</string>
 
 </resources>

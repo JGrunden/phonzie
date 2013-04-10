@@ -22,6 +22,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.jagk.phonzie.SearchPersonActivity"
+            android:label="@string/title_activity_search_person"
+            android:parentActivityName="com.jagk.phonzie.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jagk.phonzie.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.jagk.phonzie.AddPersonActivity"
+            android:label="@string/title_activity_add_person"
+            android:parentActivityName="com.jagk.phonzie.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jagk.phonzie.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

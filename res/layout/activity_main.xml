@@ -7,9 +7,11 @@
     <Button android:id="@+id/add_person"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_add_person" />
+        android:text="@string/button_add_person"
+        android:onClick="addPerson" />
     <Button android:id="@+id/search_person"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_search_person" />
+        android:text="@string/button_search_person"
+        android:onClick="searchPerson" />
 </LinearLayout>
