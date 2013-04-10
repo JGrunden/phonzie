@@ -25,8 +25,7 @@ public class AddPersonActivity extends Activity {
 		setupActionBar();
 		
 		Bundle b = this.getIntent().getExtras();
-		if(b!=null)
-		    helper = b.getParcelable(MainActivity.DATABASE);
+		helper = b.getParcelable(MainActivity.DATABASE);
 	}
 
 	/**
@@ -96,6 +95,7 @@ public class AddPersonActivity extends Activity {
     }
     
     /** Called when the user clicks the Back button */
+
     public void back(View v){
 		Intent intent = new Intent(this, MainActivity.class);
 		setResult(RESULT_OK, intent);
