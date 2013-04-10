@@ -1,12 +1,14 @@
 package com.jagk.phonzie;
 
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.os.Build;
+import android.view.View;
 
 public class SearchPersonActivity extends Activity {
 
@@ -52,4 +54,9 @@ public class SearchPersonActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	public void back(View v){
+		Intent intent = new Intent(this, MainActivity.class);
+		setResult(RESULT_OK, intent);
+		finish();
+	}
 }

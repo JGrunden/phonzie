@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -95,8 +96,10 @@ public class AddPersonActivity extends Activity {
     }
     
     /** Called when the user clicks the Back button */
-    public void searchPerson(View view) {
-    	
-    }
+    public void back(View v){
+		Intent intent = new Intent(this, MainActivity.class);
+		setResult(RESULT_OK, intent);
+		finish();
+	}
 
 }

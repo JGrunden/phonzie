@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
     	Bundle b = new Bundle();
     	b.putParcelable(DATABASE, helper);
     	intent.putExtras(b);
-    	startActivity(intent);
+    	startActivityForResult(intent,1);
     }
     
     /** Called when the user clicks the Add Person button */
@@ -41,6 +41,6 @@ public class MainActivity extends Activity {
     	Bundle b = new Bundle();
     	b.putParcelable(DATABASE, helper);
     	intent.putExtras(b);
-    	startActivity(intent);
+    	startActivityForResult(intent,0);
     }
 }

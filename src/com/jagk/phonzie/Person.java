@@ -2,11 +2,17 @@ package com.jagk.phonzie;
 
 public class Person {
 
-	private String fname="FirstName";
-	private String lname="LastName";
+	private String fname;
+	private String lname;
 	private Integer pnumber;
 
 	public Person(){
+	}
+	
+	public Person(String fname, String lname, Integer pnumber){
+		this.fname = fname;
+		this.lname = lname;
+		this.pnumber = pnumber;
 	}
 
 	public String getFname() {
@@ -30,12 +36,6 @@ public class Person {
 	}
 
 	public void setPnumber(Integer pnumber) {
-		this.pnumber = pnumber;
-	}
-
-	public Person(String fname, String lname, Integer pnumber){
-		this.fname = fname;
-		this.lname = lname;
 		this.pnumber = pnumber;
 	}
 
