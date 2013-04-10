@@ -2,6 +2,7 @@ package com.jagk.phonzie;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -14,6 +15,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
+    public void onCreate(SQLiteDatabase db) {
+    	String createQuery = "CREATE TABLE Person (_id integer primary key autoincrement, fname, lname, pnumber);";
+    	db.execSQL(createQuery);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
