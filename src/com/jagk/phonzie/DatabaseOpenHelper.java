@@ -5,8 +5,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class DatabaseOpenHelper extends SQLiteOpenHelper {
+public class DatabaseOpenHelper extends SQLiteOpenHelper implements Parcelable {
 
 	static final int databaseVersion = 1;
 	static final String dbName="phonzieDB";
@@ -67,5 +69,17 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 	   db.close();
 	  }
 	 */
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel arg0, int arg1) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
