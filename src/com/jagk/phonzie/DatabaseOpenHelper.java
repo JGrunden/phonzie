@@ -36,7 +36,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 		onCreate(db);
 	}
 	
-	public void InsertPerson(String fname, String lname, Integer pnumber){
+	public void insertPerson(String fname, String lname, Integer pnumber){
 		SQLiteDatabase db=this.getWritableDatabase();
 		 ContentValues cv=new ContentValues();
 		   cv.put(colID, 1); //kanske ska vara id istället för 1
@@ -48,7 +48,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
            db.close();
 	}
 	/* TBD
-	public int UpdatePerson(String fname, String lname, Integer pnumber)
+	public int updatePerson(String fname, String lname, Integer pnumber)
 	  {
 	   SQLiteDatabase db=this.getWritableDatabase();
 	   ContentValues cv=new ContentValues();
@@ -59,7 +59,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 	    new String []{String.valueOf(emp.getID())});   
 	  }
 	 */
-	public void DeletePerson(Integer pnumber)
+	public void deletePerson(Integer pnumber)
 	  {
 	   SQLiteDatabase db=this.getWritableDatabase();
 	   db.delete(PersonTable,colID+"=?", new String [] {String.valueOf(emp.getID())});
