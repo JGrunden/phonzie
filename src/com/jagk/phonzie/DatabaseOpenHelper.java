@@ -10,11 +10,11 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
 	static final String dbName="phonzieDB";
 	static final String PersonTable="Persons";
-	static final String colID="PersonID";
+	static final String colID="ID";
 	static final String colFname="FirstName";
 	static final String colLname="LastName";
-	static final String colPnumber="Pnumber";
-	s
+	static final String colPnumber="PersonNumber";
+	
 	public DatabaseOpenHelper(Context context) {
 		  super(context, dbName, null,1); 
 	}
@@ -47,6 +47,24 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 		   db.insert(PersonTable, nullColumnHack, cv);
            db.close();
 	}
-
+	/* TBD
+	public int UpdatePerson(String fname, String lname, Integer pnumber)
+	  {
+	   SQLiteDatabase db=this.getWritableDatabase();
+	   ContentValues cv=new ContentValues();
+	   cv.put(colPFname, emp.getName());
+	   cv.put(colLname, emp.getAge());
+	   cv.put(colDept, emp.getDept());
+	   return db.update(employeeTable, cv, colID+"=?", 
+	    new String []{String.valueOf(emp.getID())});   
+	  }
+	 */
+	public void DeletePerson(Integer pnumber)
+	  {
+	   SQLiteDatabase db=this.getWritableDatabase();
+	   db.delete(PersonTable,colID+"=?", new String [] {String.valueOf(emp.getID())});
+	   db.close();
+	  }
+	
 
 }
