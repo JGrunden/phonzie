@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 
 public class AddPersonActivity extends Activity {
@@ -51,5 +53,15 @@ public class AddPersonActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+    /** Called when the user clicks the Add Person button */
+    public void addPerson(View view) {
+    	
+    }
+    
+    /** Called when the user clicks the Back button */
+    public void searchPerson(View view) {
+    	
+    }
 
 }

@@ -8,5 +8,8 @@
     <string name="button_search_person">Search person</string>
     <string name="title_activity_search_person">Search Person</string>
     <string name="title_activity_add_person">Add Person</string>
-
+    <string name="first_name">First name:</string>
+    <string name="last_name">Last name:</string>
+    <string name="p_number">Person number:</string>
+    <string name="button_back">Back</string>
 </resources>
