@@ -9,11 +9,14 @@ import android.view.View;
 
 public class MainActivity extends Activity {
 	
-	public String a;
+	public final static String DATABASE = "com.jagk.phonzie.DATABASE";
+	DatabaseOpenHelper helper;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        helper = new DatabaseOpenHelper(this);
     }
 
     @Override
@@ -26,12 +29,18 @@ public class MainActivity extends Activity {
     /** Called when the user clicks the Search Person button */
     public void searchPerson(View view) {
     	Intent intent = new Intent(this, SearchPersonActivity.class);
+    	Bundle b = new Bundle();
+    	b.putParcelable(DATABASE, helper);
+    	intent.putExtras(b);
     	startActivity(intent);
     }
     
     /** Called when the user clicks the Add Person button */
     public void addPerson(View view) {
     	Intent intent = new Intent(this, AddPersonActivity.class);
+    	Bundle b = new Bundle();
+    	b.putParcelable(DATABASE, helper);
+    	intent.putExtras(b);
     	startActivity(intent);
     }
 }
