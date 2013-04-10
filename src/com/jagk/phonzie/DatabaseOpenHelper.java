@@ -3,7 +3,6 @@ package com.jagk.phonzie;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -17,9 +16,11 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper implements Parcelable {
 	static final String colFname="FirstName";
 	static final String colLname="LastName";
 	static final String colPnumber="PersonNumber";
+	static Context context;
 
 	public DatabaseOpenHelper(Context context) {
-		super(context, dbName, null, databaseVersion); 
+		super(context, dbName, null, databaseVersion);
+		this.context = context;
 	}
 
 	/*public DatabaseOpenHelper(Context context, String name,
@@ -27,7 +28,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper implements Parcelable {
 		super(context, name, factory, version);
 	}
 	 */
-
+	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		String createQuery = "CREATE TABLE "+PersonTable+" ("+colID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+colFname+", "+colLname+", "+colPnumber+");";
@@ -90,5 +91,16 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper implements Parcelable {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	// this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
+    public static final Parcelable.Creator<DatabaseOpenHelper> CREATOR = new Parcelable.Creator<DatabaseOpenHelper>() {
+        public DatabaseOpenHelper createFromParcel(Parcel in) {
+            return new DatabaseOpenHelper(context);
+        }
+
+        public DatabaseOpenHelper[] newArray(int size) {
+            return new DatabaseOpenHelper[size];
+        }
+    };
 
 }
