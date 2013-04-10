@@ -11,5 +11,9 @@
     <string name="first_name">First name:</string>
     <string name="last_name">Last name:</string>
     <string name="p_number">Person number:</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_p_number">Person number</string>
     <string name="button_back">Back</string>
+
 </resources>
